@@ -8,6 +8,8 @@
     width: 360px;
     height: 400px;
     border-radius: 20px 20px 20px 20px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .chat__header{
@@ -20,33 +22,41 @@
 
 }
 .chat__header__container{
-    padding: 5px 10px;
+    padding:  0  10px 0 18px;
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
 .chat__header__text{
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0px;
     color: #23b838;
     font-weight: 400;
     font-family: "Rubik";
     cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 .chat__header__text__active{
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0px;
     color: #ffffff;
     font-weight: 400;
     font-family: "Rubik";
     border-bottom: 2px solid #23b838;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+
 }
 .left__button__block{
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 54%;
+    height: 100%;
+
 }
 
 .chat__input {
@@ -70,28 +80,26 @@
 .chat__messages__container{
     overflow-y: scroll;
     height: 320px;
+    padding: 10px;
 }
 ::-webkit-scrollbar{
-    width: 10px;
-}
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
-
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    background-color: #F5F5F5;
+    width: 0px;
 }
 
 
 .message__container{
-    padding: 5px 10px;
     display: flex;
     align-items: center;
     position: relative;
+    padding-bottom: 10px;
+
+}
+
+.same__message__container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 3px;
 
 }
 
@@ -101,8 +109,15 @@
     max-width: 300px;
     word-wrap: break-word;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
-
+    padding-bottom: 1px;
+}
+.same__message{
+    background-color: #ffffff;
+    border-radius:  20px 20px 20px 20px;
+    max-width: 300px;
+    word-wrap: break-word;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding-bottom: 1px;
 }
 
 .container{
@@ -112,6 +127,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+    padding-bottom: 3px ;
 
 }
 .message__level{
@@ -126,6 +142,7 @@
     color: #a0a6b0;
     font-weight: 400;
     font-family: "Rubik";
+    margin-left: 5px;
 }
 
 .message__text{
@@ -147,7 +164,7 @@
 }
 
 .your__message__container{
-    padding: 5px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -155,11 +172,12 @@
 }
 
 .your__message{
-    background-color: green;
+    background-color:  #23b838;
     border-radius:  20px 20px 0 20px;
-    padding: 15px;
+    padding: 10px 15px 10px 12px;
     max-width: 300px;
     min-width: 50px;
+    word-break: break-word;
 }
 
 .your__message__text{
@@ -181,22 +199,35 @@
 
 .dot__container{
     display: flex;
+    width: 20px;
+    justify-content: space-between;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.message__dot__container{
+    display: flex;
+    width: 20px;
+    justify-content: space-between;
     margin-left: 5px;
     cursor: pointer;
+
 }
 .dot__container:hover{
     filter: brightness(1.2);
 }
+.message__dot__container:hover{
+    filter: brightness(1.2);
+}
 .menu__dot{
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: grey;
 }
 .chat__smile{
     width: 20px;
     height: 20px;
-    margin-right: 5px;
+    cursor: pointer;
 }
 
 .menu{
@@ -218,6 +249,7 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
+    padding-top: 9px;
 }
 .dropDown__menu__item{
     padding: 5px;
@@ -266,11 +298,89 @@
 }
 .friend__menu__item{
     padding-bottom: 10px;
+
 }
+
+.friend__menu__item:hover{
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
 .person__icon{
-    height: 15px;
-    width: 15px;
+    height: 14px;
+    width: 14px;
+
+}
+.input{
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: 0px;
+    font-size: 13px;
+    color: #a0a6b0;
+    font-weight: 400;
+    font-family: "Rubik";
 }
 body{
     background-image: url("https://disgustingmen.com/wp-content/uploads/2016/10/2KGMKT_CivilizationVI_Screenshot_Preview_City-Mid-Fog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.friend__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px 20px 20px 20px;
+    word-wrap: break-word;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.friend__info{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    width: 80%;
+
+}
+.friend__buttons{
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+.send__button{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.delete__button{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+}
+.friend__username{
+    font-size: 15px;
+    color: #a0a6b0;
+    font-weight: 400;
+    font-family: "Rubik";
+
+}
+.friend__level{
+    font-size: 15px;
+    color: #23b838;
+    font-weight: 400;
+    font-family: "Rubik";
+}
+.friend__clan{
+    color: #33FFCC;
+
+}
+.friend__online{
+  color: #23b838;
+}
+.friend__offline{
+    color: #FF0000;
 }

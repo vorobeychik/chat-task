@@ -12,14 +12,14 @@ export default function FriendMenu(props) {
     }
     return (
             <div className={'friend__menu'}>
-                <div className={'dot__container'} onClick={() => showFriendMenu()}>
+                <div className={'message__dot__container'} onClick={() => showFriendMenu()}>
                     <div className="menu__dot"></div>
                     <div className="menu__dot"></div>
                     <div className="menu__dot"></div>
                 </div>
                 <div className={props.state.showFriendMenu[0] === props.index ? 'friend__menu__container friend__menu__container__visible' :'friend__menu__container'} >
-                    <p className={'friend__menu__item'}>В друзья</p>
-                    <p className={'friend__menu__item'}> Пожаловаться</p>
+                    <p className={'friend__menu__item'}>{props.state.language.friendMenu[0]}</p>
+                    <p className={'friend__menu__item'}> {props.state.language.friendMenu[1]}</p>
                 </div>
             </div>
     )
