@@ -18,8 +18,8 @@ export default function FriendMenu(props) {
                     <div className="menu__dot"></div>
                 </div>
                 <div className={props.state.showFriendMenu[0] === props.index ? 'friend__menu__container friend__menu__container__visible' :'friend__menu__container'} >
-                    <p>В друзья</p>
-                    <p>Пожаловаться</p>
+                    <p className={'friend__menu__item'}>В друзья</p>
+                    <p className={'friend__menu__item'}> Пожаловаться</p>
                 </div>
             </div>
     )

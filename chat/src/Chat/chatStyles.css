@@ -32,6 +32,7 @@
     color: #23b838;
     font-weight: 400;
     font-family: "Rubik";
+    cursor: pointer;
 }
 .chat__header__text__active{
     font-size: 13px;
@@ -40,6 +41,7 @@
     font-weight: 400;
     font-family: "Rubik";
     border-bottom: 2px solid #23b838;
+    cursor: pointer;
 }
 .left__button__block{
     display: flex;
@@ -98,6 +100,7 @@
     border-radius:  20px 20px 20px 0;
     max-width: 300px;
     word-wrap: break-word;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 
 
 }
@@ -179,6 +182,10 @@
 .dot__container{
     display: flex;
     margin-left: 5px;
+    cursor: pointer;
+}
+.dot__container:hover{
+    filter: brightness(1.2);
 }
 .menu__dot{
     width: 5px;
@@ -215,6 +222,12 @@
 .dropDown__menu__item{
     padding: 5px;
     text-align: center;
+    cursor: pointer;
+
+}
+.dropDown__menu__item:hover{
+    filter: brightness(1.2);
+
 }
 
 .dropDown__container{
@@ -222,8 +235,11 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.dropDown__button{
+.dropDown__button:hover{
+    filter: brightness(1.2);
+    cursor: pointer;
 }
+
 .friend__menu{
     display: flex;
 }
@@ -234,10 +250,22 @@
     position: absolute;
     background-color: white;
     border-radius: 15px;
-    padding: 10px;
+    padding: 20px 20px 10px 20px;
+    font-size: 13px;
+    color: #000000;
+    font-weight: 300;
+    font-family: "Rubik";
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 15;
+
 }
 .friend__menu__container__visible{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.friend__menu__item{
+    padding-bottom: 10px;
 }
 .person__icon{
     height: 15px;
