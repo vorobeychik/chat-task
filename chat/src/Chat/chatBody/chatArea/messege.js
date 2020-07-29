@@ -1,7 +1,9 @@
 import React from "react";
 import '../../chatStyles.css'
+import FriendMenu from "./friendMenu";
 
 export default function Message(props) {
+
     if('yourMessage' in props.messageInfo){
         return (
             <div className={'your__message__container'}>
@@ -17,13 +19,10 @@ export default function Message(props) {
                 <div className={'message'}>
                     <div className={'container'}>
                         <div className={'message__header'}>
+                            <img src={require('../../assets/person.png')} className={'person__icon'} />
                             <p className={'message__username'}>{ props.messageInfo.username }</p>
                             <p className={'message__level'}>{ props.messageInfo.level }</p>
-                            <div className={'dot__container'}>
-                                <div className="menu__dot"></div>
-                                <div className="menu__dot"></div>
-                                <div className="menu__dot"></div>
-                            </div>
+                            <FriendMenu index = {props.index} state = {props.state} setState = {props.setState}/>
                         </div>
                         <p className={'message__text'}>{ props.messageInfo.message }</p>
                     </div>

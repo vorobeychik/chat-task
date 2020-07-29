@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, {useEffect, useState} from "react";
 import ChatBody from "./chatBody/chatBody";
 import DropDownMenu from "./chatHeader/dropDownMenu";
 
@@ -9,15 +9,15 @@ export default function Chat() {
           {username:'Hate', level:9,message:'Всем привет!',time:'16:17'},
           {username:'EtherMonster', level:10,message:'Привет', time: '16:18'},
           {username:'Don_Ekater', level:7,message:'В индии  бойня!',time: '20:53'},
-          {username:'GameMaster', level:8,message:'Всем хай',time: '21:08'},
-          {yourMessage:true, message:'Вот это да', time:'22:10' },
+          {username:'GameMaster', level:8,message:'Всем привет я хочу поделиться с вами одной фичей про  майнинг автоматом не развод ',time: '21:08'},
+          {yourMessage:true, message:'Вот это да я так думаю ты реально хорош в этом', time:'22:10' },
           {username:'WebCard' ,level:11,message:'123',time: '00:03'},
           {yourMessage:true, message:'?', time:'00:15' },
       ],
-      showFriendMenu:false,
+      showFriendMenu:[undefined],
+      lang:'Ru'
    });
-
-
+   useEffect(() => console.log(state))
    function switchToFiends() {
         setState({
             ...state,
@@ -39,7 +39,29 @@ export default function Chat() {
        })
    }
 
-
+   function switchLang(event) {
+        console.log(event.target.textContent)
+       switch(event.target.textContent){
+           case 'English':
+                setState({
+                    ...state,
+                    lang:'En'
+                });
+                break;
+           case 'Русский':
+               setState({
+                   ...state,
+                   lang:'Ru'
+               });
+               break;
+           case 'China':
+               setState({
+                   ...state,
+                   lang:'Chi'
+               });
+               break;
+       }
+   }
 
     return (
         <div className="chat__main">
@@ -56,10 +78,10 @@ export default function Chat() {
                             <p>Друзья</p>
                         </div>
                     </div>
-                    <DropDownMenu>
-                        <p className={'dropDown__menu__item'}>Русский</p>
-                        <p className={'dropDown__menu__item'}>English</p>
-                        <p className={'dropDown__menu__item'}>China</p>
+                    <DropDownMenu state = {state}>
+                        <p className={'dropDown__menu__item'} onClick={(event) => switchLang(event)}>Русский</p>
+                        <p className={'dropDown__menu__item'} onClick={(event) => switchLang(event)}>English</p>
+                        <p className={'dropDown__menu__item'} onClick={(event) => switchLang(event)}>China</p>
                     </DropDownMenu>
                     <div className={'right__button__block'}>
                         <div className={'dot__container'}>
